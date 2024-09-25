@@ -9,6 +9,9 @@ body{
   background-color:  rgb(63, 67, 97);
 }
 nav{
+    position: sticky;
+    top: 0;
+    z-index: 2;
     display: flex;
     background-color: black;
     color: white;
@@ -88,6 +91,8 @@ nav ul li{
 
 .bottom{
     position: sticky;
+    bottom: 0;
+    z-index: 2;
     height: 130px;
     background-color:rgb(18, 2, 2);
     display: flex;

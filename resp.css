@@ -1,82 +1,91 @@
-/* Mobile devices (portrait) */
-@media only screen and (max-width: 700px) {
-    *{
+@media(max-width:968px){
+    html,body{
+        font-size: 55%;
+        width: 100%;
+        height: 100%;
         margin: 0;
-        padding: 0;
+        overflow-x: 0;
+        overflow-y: 0;
     }
     body{
-        background-color: rgb(63, 67, 97);
-        height: 100vh;
-    }
-    nav {
         display: flex;
-        background-color: black;
-        width: 250vw;
-        color: white;
-        height: 45px;
-    }
-   
-    nav ul {
-        flex-direction: row;
-        align-items: center;
+        background-color: grey;
+        width: 100%;
+        height: 100%;
+        background-image: url("newimg.jpg");
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: 0;
+        
     }
 
-    nav ul li {
-        padding: 10px 1;
+    #volume{
+        height: 3rem;
+        width: 3rem;
+        display:flex;
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
     }
 
-
-    .container {
-        min-height: 67vh;
-        min-width: 800px;
+    #volumeBar{
+        display:flex;
+        position: absolute;
+        left: 5rem;
+        bottom: 1.7rem;
+        height: 1rem;
+        cursor: pointer;
+        background:linear-gradient(to right, #ca0d9b,white);
+    
+        appearance: none; /* Removes default styling in Chrome, Safari, and Opera */
+        width: 10rem;
+        height: 1rem;    
+        outline: none;
+        border-radius: .5rem;
+        
+    }
+    .icon{
+        margin: 1.5rem 2rem;
+        fill: rgb(67, 62, 62);
+        cursor: pointer;
         display: flex;
-        width: 500px;
-        background-color: transparent;
+        justify-content: center;
+        width: 15rem;
+        height: 15rem;
+     
+    }
+    #loop{
+        height: 2.5rem;
+        width: 2.5rem;
+        display:flex;
+        position: absolute;
+        right: 2rem;
+        bottom: 1.5rem;
+       
+    }
+    #progressBar{
+        width: 10rem;
+        cursor: pointer;
+    }
+    .container{
+        /* min-height: 52rem; */
+        /* min-width: 100%; */
+        display: flex;
+        width: 100%;
         justify-content: flex-start;
         color: white;
-        margin: 17px auto;
+        margin: 1.7rem auto;
         padding: 0;
-        border-radius: 12px;
-        background-image: url(images/arjit1.jpg);
-        background-position: -88% 10%;
+        border-radius: 1.2rem;
+        background-image: url(images/arjit1.jpg);        
+        background-position: 40% 4%;
+     }
+     .songItemContainer {
+        width: 100%;
     }
-    #volume {
-        height: 25px;
-        width: 25px;
-        display: flex;
-         position: absolute;
-        left: 15px;
-        bottom: 33px; 
-    }
-    #volumeBar {
-    display: flex;
-     position: absolute;
-    left: 50px;
-    bottom: 40px;
-    height: 20px; 
-    cursor: pointer;
-    background: linear-gradient(to right, #ca0d9b, white);
-    appearance: none;
-    width: 50px;
-    height: 10px;
-    outline: none;
-    border-radius: 5px;
-}
-#loop{
-    height: 25px;
-    width: 25px;
-    display:flex; 
-     position: absolute;
-    right: 40px;
-    bottom: 30px;
-}
-.icon{
-     margin: 15px 20px; 
-    fill: rgb(67, 62, 62);
-    cursor: pointer;
-    display: flex;
-    justify-content:space-between;
- 
-}
 
 }

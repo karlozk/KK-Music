@@ -1,13 +1,28 @@
-body{
-    background-color: rgb(63, 67, 97);
-}
+
 *{
     margin: 0;
     padding: 0;
 }
-body{
-  background-color:  rgb(63, 67, 97);
+html,body{
+    font-size: 62.5%;
+    width: 100%;
+    overflow-x: hidden;
 }
+body{
+    background-color: grey;
+    width: 100%;
+    height: 100vh;
+    background-image: url("newimg.jpg");
+    overflow: hidden;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    
+   
+}
+
 nav{
     position: sticky;
     top: 0;
@@ -15,13 +30,13 @@ nav{
     display: flex;
     background-color: black;
     color: white;
-    height: 45px;
+    height: 4.5rem;
 }
 .logo img{
-    width: 120px;
+    width: 12.0rem;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 1rem;
 }
 nav ul{
     display: flex;
@@ -29,121 +44,152 @@ nav ul{
     align-items: center;
 }
 nav ul li{
-    padding: 0 10px;
-    font-size: 13px;
+    padding: 0 1rem;
+    font-size: 1.3rem;
 }
 .container{
-   min-height: 67vh;
-   min-width: 800px;
+    position: sticky;
+    top: auto;
+    z-index: 3;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  
+   height: 38rem;
+   width: 80rem;        
    display: flex;
-   width: 500px;
-   justify-content: flex-start;
+   /* width: 100%; */
+   justify-content: center;
    color: white;
-   margin: 17px auto;
+   margin: 1.7rem auto;
    padding: 0;
-   border-radius: 12px;
+   border-radius: 1.2rem;
    background-image: url(images/arjit1.jpg);        
    background-position: 125% 4%;
+   background-size: cover;
+}
+h1{
+    font-size: 3rem;
+    padding: 1rem;
+    position: sticky;
+    background-color: black;
+    top: 0%;
+    z-index: 4;
 }
 .songItemContainer{
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     background-color:transparent;
     color:white;
-    height: 430px;
-    width: 100%;
+    height: 43.0rem;
+    width: 78rem;
     justify-content: space-around;
-    align-items: left;
-    padding: 2px;
-    border-radius: 30px;
-    margin:20px 0;
-    overflow: hidden;
+    /* align-items: left; */
+    padding: .2rem;
+    border-radius: 3rem;
+    margin:2rem 0;
+    overflow-y: visible;
 }
 .songItem{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 1rem;
     background-color: transparent;
     cursor: pointer;
+    
+    
 }
 
 .songName{
-    width: 150px;
+    width: 15rem;
+    height: 3rem;
+    border-radius: 4px;
+    line-height: 3rem;
+    
+}
+.songName:hover{
+    background-color: rgb(56, 58, 58);
+    
+    
 }
 .songItem span {
     flex-grow: 1;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 2rem;
 }
 .songItem img{
-    width: 30px;
-    border-radius: 40px;
-    margin-right: 8px;
+    width: 3rem;
+    border-radius: 4rem;
+    margin-right: .8rem;
 }
 .timeStamp{
     display: flex;
     align-items: center;
     margin-left: auto;
     position: relative;
-    right: 10px;
+    right: 1rem;
 }
 
 .bottom{
+    font-size: 1.5rem;
     position: sticky;
     bottom: 0;
     z-index: 2;
-    height: 130px;
+    height: 13rem;
     background-color:rgb(18, 2, 2);
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;    
-    padding: 10px;
+    padding: 1rem;
+    width: 100%;
 }
 #progressBar{
-    width: 80vw;
+    width: 80rem;
     cursor: pointer;
 }
 #volumeBar{
     display:flex;
     position: absolute;
-    left: 300px;
-    bottom: 40px;
-    height: 20px;
+    left: 30rem;
+    bottom: 4rem;
+    height: 2rem;
     cursor: pointer;
     background:linear-gradient(to right, #ca0d9b,white);
 
     appearance: none; /* Removes default styling in Chrome, Safari, and Opera */
-    width: 100px;
-    height: 10px;    
+    width: 10rem;
+    height: 1rem;    
     outline: none;
-    border-radius: 5px;
+    border-radius: .5rem;
     
 }
 
 .icon{
-    margin: 15px 20px;
+    margin: 1.5rem 2rem;
     fill: rgb(67, 62, 62);
     cursor: pointer;
     display: flex;
     justify-content: center;
+    width: 20rem;
+    height: 20rem;
 }
 #volume{
-    height: 35px;
-    width: 35px;
+    height: 3.5rem;
+    width: 3.5rem;
     display:flex;
     position: absolute;
-    left: 260px;
-    bottom: 30px;
+    left: 26rem;
+    bottom: 3rem;
 }
 #loop{
-    height: 25px;
-    width: 25px;
+    height: 2.5rem;
+    width: 2.5rem;
     display:flex;
     position: absolute;
-    right: 250px;
-    bottom: 30px;
+    right: 25rem;
+    bottom: 3rem;
    
 }
 .songInfo{
@@ -166,7 +212,11 @@ nav ul li{
     zoom: 102%;
     cursor: pointer;
 }
-
+.end{
+    position: absolute;
+    bottom: 1rem;
+    color: white;
+}
 
 
 

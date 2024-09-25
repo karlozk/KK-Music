@@ -10,8 +10,11 @@ click = document.getElementById("clickToPlay");
 play = document.getElementById("play");
 loop = document.getElementById("loop");
 volumeBar = document.getElementById("volumeBar");
+volume=document.getElementById("volume");
 let hasClicked = false;
 let isLooping = true;
+let isVolume = true;
+
 
 let songs = [
     { songName: "Mai hu saath tere", filePath: "songs/maihusaathtere.mp3", coverPath: "images/maihusaathtere.jpg" },
@@ -160,11 +163,25 @@ loop.addEventListener('click', () => {
     }
 })
 
-volumeBar.addEventListener('change', () => {
-    audioElement.volume = volumeBar.value;
-    console.log(volumeBar.value);
+// volumeBar.addEventListener('change', () => {
+//     audioElement.volume = volumeBar.value;
+//     console.log(volumeBar.value);
+// })
+// volumeBar.addEventListener('input', function () {
+//     const value = (volumeBar.value - volumeBar.min) / (volumeBar.max - volumeBar.min) * 100;
+//     volumeBar.style.background = `linear-gradient(to right, #ca0d9b ${value}%, #fff ${value}%)`;
+// });
+
+volume.addEventListener('click',() => {
+    if(isVolume){
+   volume.innerHTML=`<svg fill="#ffffff" viewBox="0 0 24 24" id="mute-3" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="primary" d="M16.41,2.19a1,1,0,0,1,1-.08A1,1,0,0,1,18,3v9.93L9.89,7ZM4,9v6a2,2,0,0,0,2,2H9.84l6.57,4.81a1,1,0,0,0,1,.08A1,1,0,0,0,18,21V14.19L8.25,7H6a2,2,0,0,0-.85.19A2,2,0,0,0,4,9Z" style="fill: #fcfcfc;"></path><path id="secondary" d="M2.41,5.17l2.74,2L18,16.65l2.41,1.78a.94.94,0,0,0,.59.2,1,1,0,0,0,.59-1.8L18,14.19,8.25,7,3.59,3.57a1,1,0,0,0-1.18,1.6Z" style="fill: #e21212;"></path></g></svg>`
+    isVolume=false
+    audioElement.volume=0
+}
+else if(!isVolume){
+    volume.innerHTML= `<svg id="volume" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="5"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4853 2.29289C18.8758 1.90237 19.509 1.90237 19.8995 2.29289C25.3668 7.76023 25.3668 16.6245 19.8995 22.0919C19.509 22.4824 18.8758 22.4824 18.4853 22.0919C18.0948 21.7014 18.0948 21.0682 18.4853 20.6777C23.1716 15.9914 23.1716 8.3934 18.4853 3.70711C18.0948 3.31658 18.0948 2.68342 18.4853 2.29289ZM17.0711 5.12126C16.6806 4.73074 16.0474 4.73074 15.6569 5.12126C15.2664 5.51179 15.2664 6.14495 15.6569 6.53548C18.7811 9.65967 18.7811 14.725 15.6569 17.8492C15.2664 18.2397 15.2664 18.8729 15.6569 19.2634C16.0474 19.6539 16.6806 19.6539 17.0711 19.2634C20.9764 15.3582 20.9764 9.02651 17.0711 5.12126ZM14.2426 7.94975C13.8521 7.55923 13.2189 7.55923 12.8284 7.94975C12.4379 8.34028 12.4379 8.97344 12.8284 9.36397C14.3905 10.9261 14.3905 13.4587 12.8284 15.0208C12.4379 15.4113 12.4379 16.0445 12.8284 16.435C13.2189 16.8256 13.8521 16.8256 14.2426 16.435C16.5858 14.0919 16.5858 10.2929 14.2426 7.94975ZM11 6.04031C11 4.78255 9.5451 4.08329 8.56296 4.86901L4.64922 8H3C1.34315 8 0 9.34315 0 11V13C0 14.6569 1.34315 16 3 16H4.64922L8.56296 19.131C9.5451 19.9167 11 19.2174 11 17.9597V6.04031ZM5.89861 9.56174L9 7.08062V16.9194L5.89861 14.4383C5.54398 14.1546 5.10336 14 4.64922 14H3C2.44772 14 2 13.5523 2 13V11C2 10.4477 2.44772 10 3 10H4.64922C5.10336 10 5.54398 9.84544 5.89861 9.56174Z" fill="#ffffff"></path> </g>
+             </svg>`
+    isVolume=true
+    audioElement.volume=1
+ }
 })
-volumeBar.addEventListener('input', function () {
-    const value = (volumeBar.value - volumeBar.min) / (volumeBar.max - volumeBar.min) * 100;
-    volumeBar.style.background = `linear-gradient(to right, #ca0d9b ${value}%, #fff ${value}%)`;
-});
